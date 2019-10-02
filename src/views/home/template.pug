@@ -3,7 +3,11 @@ v-container.home
     v-col(cols=12)
       img(alt="Vue logo" src="../../assets/logo.png")
     v-col(cols=12)
-      .display-1 Hello Vue
+      .display-1 {{ state.text }}
     v-col(cols=12)
-      v-icon add
-      v-icon mdi-mouse
+      .display-1 {{ state.count }}
+      v-btn.mx-1(color="primary" x-small fab @click="addCount()")
+        v-icon add
+      v-btn.mx-1(color="error" x-small fab @click="minusCount()")
+        v-icon mdi-minus
+
