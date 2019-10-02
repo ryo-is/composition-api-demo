@@ -1,4 +1,4 @@
-import { createComponent, reactive } from "@vue/composition-api"
+import { createComponent, reactive, onMounted } from "@vue/composition-api"
 import { HomeComponentState } from "@/types"
 
 export default createComponent({
@@ -6,6 +6,10 @@ export default createComponent({
     const state = reactive<HomeComponentState>({
       text: "Hello Vue Composition API",
       count: 0
+    })
+
+    onMounted(() => {
+      console.log("mounted!!!")
     })
 
     const addCount = (): void => {
